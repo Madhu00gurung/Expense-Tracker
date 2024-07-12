@@ -2,6 +2,7 @@
 import React from "react";
 import ExpenseForm from "./expenseform.js";
 import Search from "./search.js";
+import Grid from "./container.js";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './globals.css';
 export default function page() {
@@ -9,6 +10,7 @@ export default function page() {
     <>
     <ExpenseForm/>
     <Search/>
+    <Grid/>
     </>
   )
 };

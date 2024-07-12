@@ -1,50 +1,50 @@
-const Data = [
+export const Data = [
         {
           "id": 1,
-          "name": "Carrot",
+          "name": "CARROT",
           "category": "Root",
-          "price": 1.5,
+          "price": 100,
           "unit": "kg",
-          "image": "https://via.placeholder.com/150?text=Carrot"
+          "image": "https://static.toiimg.com/photo/105672842.cms"
         },
         {
           "id": 2,
-          "name": "Broccoli",
+          "name": "BROCCOLI",
           "category": "Cruciferous",
-          "price": 2.0,
+          "price": 200,
           "unit": "kg",
-          "image": "https://via.placeholder.com/150?text=Broccoli"
+          "image": "https://domf5oio6qrcr.cloudfront.net/medialibrary/5390/h1218g16207258089583.jpg"
         },
         {
           "id": 3,
-          "name": "Spinach",
+          "name": "SPINACH",
           "category": "Leafy green",
-          "price": 1.2,
+          "price": 100,
           "unit": "kg",
-          "image": "https://via.placeholder.com/150?text=Spinach"
+          "image": "https://cdn.tasteatlas.com//Images/Ingredients/57b6b295b9764eeb92e46628011eaf57.jpg?w=375&h=280"
         },
         {
           "id": 4,
-          "name": "Potato",
-          "category": "Root",
-          "price": 0.8,
+          "name": "APPLE",
+          "category": "Fruit",
+          "price": 150,
           "unit": "kg",
-           "image": "https://via.placeholder.com/150?text=Potato"
+           "image": "https://5.imimg.com/data5/AK/RA/MY-68428614/apple.jpg"
         },
         {
           "id": 5,
-          "name": "Tomato",
+          "name": "ORANGE",
           "category": "Fruit",
-          "price": 1.8,
+          "price": 180,
           "unit": "kg",
-           "image": "https://via.placeholder.com/150?text=Tomato"
+           "image": "https://media.istockphoto.com/id/155302141/photo/healthy-food-background-orange.jpg?s=612x612&w=0&k=20&c=ws84A95Ta1nTUCduh398qiApLIIcjiAJhlnR1oiYtaU="
         },
         {
           "id": 6,
-          "name": "Cucumber",
-          "category": "Cucurbitaceae",
-          "price": 1.0,
+          "name": "BANANA",
+          "category": "Fruit",
+          "price": 250,
           "unit": "kg",
-          "image": "https://via.placeholder.com/150?text=Cucumber"
+          "image": "https://blog-images-1.pharmeasy.in/blog/production/wp-content/uploads/2021/01/30152155/shutterstock_518328943-1.jpg"
         }
 ];
