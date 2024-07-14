@@ -2,8 +2,8 @@
   background: black;
   height: 100px;
   text-align: center;
-
 }
+
 .header-logo{
   height:100px;
   width:100px;
@@ -20,22 +20,4 @@
   color:aqua;
   margin: 0px;
   font-family:  "Iowan Old Style";
-}
-
-@media (max-width: 576px) {
-  .header-text {
-    font-size: 40px; 
-}
-}
-.search-form{
-  text-align: center;
-}
-.search-bar{
-  height:50px;
-  border:1px solid black;
-}
-.search-button{
-  height: 50px;
-  background: black;
-  color:aqua;
 }
