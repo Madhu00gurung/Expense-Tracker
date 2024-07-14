@@ -1,16 +1,12 @@
-"use state";
+"use client";
 import React from "react";
-import ExpenseForm from "./expenseform.js";
-import Search from "./search.js";
-import Grid from "./container.js";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Header from './header.js';
 import './globals.css';
 export default function page() {
   return (
     <>
-    <ExpenseForm/>
-    <Search/>
-    <Grid/>
+    <Header/>
     </>
   )
 };
