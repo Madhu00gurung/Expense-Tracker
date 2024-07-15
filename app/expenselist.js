@@ -1,24 +1,71 @@
-import React from 'react';
+"use client"
+import React, { useState } from 'react';
 
-const ExpenseList = ({ expenses, deleteExpense, startEditing }) => {
+const ExpenseList = ({ expenses, deleteExpense, editExpense }) => {
+  const [editMode, setEditMode] = useState(null);
+  const [editedName, setEditedName] = useState('');
+  const [editedCategory, setEditedCategory] = useState('');
+  const [editedPrice, setEditedPrice] = useState('');
+
+  const handleEdit = (expense) => {
+    setEditMode(expense.id);
+    setEditedName(expense.name);
+    setEditedCategory(expense.category);
+    setEditedPrice(expense.price);
+  };
+
+  const handleSave = (id) => {
+    const updatedExpense = {
+      id,
+      name: editedName,
+      category: editedCategory,
+      price: parseFloat(editedPrice),
+    };
+    editExpense(updatedExpense);
+    setEditMode(null);
+  };
+
+  const handleCancel = () => {
+    setEditMode(null);
+  };
+
   return (
-    <ul className="list-group">
-      {expenses.map((expense) => (
-        <li key={expense.id} className="list-group-item d-flex justify-content-between align-items-center">
-          <div>
-            <span className="fw-bold">{expense.name}</span> - {expense.category} - ${expense.price}
-          </div>
-          <div>
-            <button onClick={() => startEditing(expense)} className="btn btn-warning btn-sm me-2">
-              Edit
-            </button>
-            <button onClick={() => deleteExpense(expense.id)} className="btn btn-danger btn-sm">
-              Delete
-            </button>
-          </div>
-        </li>
-      ))}
-    </ul>
+    <div className='container'>
+      <h2 className='expense-output'>Expenses</h2>
+      <ul>
+        {expenses.map((expense) => (
+          <li key={expense.id}>
+            {editMode === expense.id ? (
+              <div className='output'>
+                <input 
+                  type="text"
+                  value={editedName}
+                  onChange={(e) => setEditedName(e.target.value)}
+                />
+                <input
+                  type="text"
+                  value={editedCategory}
+                  onChange={(e) => setEditedCategory(e.target.value)}
+                />
+                <input
+                  type="number"
+                  value={editedPrice}
+                  onChange={(e) => setEditedPrice(e.target.value)}
+                />
+                <button onClick={() => handleSave(expense.id)}>Save</button>
+                <button onClick={handleCancel}>Cancel</button>
+              </div>
+            ) : (
+              <div>
+                {expense.name} - {expense.category} - ${expense.price.toFixed(2)}
+                <button onClick={() => deleteExpense(expense.id)}>Delete</button>
+                <button onClick={() => handleEdit(expense)}>Edit</button>
+              </div>
+            )}
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 };
 

@@ -1,42 +1,51 @@
-<<<<<<< Updated upstream
+"use client"
+import React, { useState, useEffect } from 'react';
+import Header from './header';
+import ExpenseForm from './expenseform';
+import ExpenseList from './expenselist';
 
-"use client";
-import React from "react";
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Header from './header.js';
-import Dashboard from "./dashboard.js";
-import './globals.css';
-export default function page() {
-  return (
-    <>
-    <Header/>
-    <Dashboard/>
-    </>
-  )
-};
-=======
-import React, { useState } from 'react';
-import AddExpenseForm from './components/AddExpenseForm';
-import ExpenseList from './components/ExpenseList';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css';
-
-function App() {
+const Page = () => {
   const [expenses, setExpenses] = useState([]);
 
-  const addExpense = (newExpense) => {
-    setExpenses([...expenses, newExpense]);
+  useEffect(() => {
+    const storedExpenses = JSON.parse(localStorage.getItem('expenses')) || [];
+    setExpenses(storedExpenses);
+  }, []);
+
+  const addExpense = (expense) => {
+    const updatedExpenses = [...expenses, expense];
+    setExpenses(updatedExpenses);
+    localStorage.setItem('expenses', JSON.stringify(expenses));
   };
 
+  const deleteExpense = (id) => {
+    const updatedExpenses = expenses.filter((expense) => expense.id !== id);
+    setExpenses(updatedExpenses);
+    localStorage.setItem('expenses', JSON.stringify(updatedExpenses));
+  };
+
+  const editExpense = (updatedExpense) => {
+    const updatedExpenses = expenses.map((expense) => {
+      if (expense.id === updatedExpense.id) {
+        return updatedExpense;
+      } else {
+        return expense;
+      }
+    });
+  
+    setExpenses(updatedExpenses);
+    localStorage.setItem('expenses', JSON.stringify(updatedExpenses));
+  };
+  
+
   return (
-    <div className="container mt-5">
-      <h1 className="text-center mb-4">Expense Tracker</h1>
-      <AddExpenseForm onAddExpense={addExpense} />
-      <ExpenseList expenses={expenses} />
+    <div className='body'>
+      <Header/>
+      <ExpenseForm addExpense={addExpense} />
+      <ExpenseList expenses={expenses} deleteExpense={deleteExpense} editExpense={editExpense} />
     </div>
   );
-}
+};
 
-export default App;
->>>>>>> Stashed changes
 
+export default Page;
