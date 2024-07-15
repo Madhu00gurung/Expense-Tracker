@@ -5,11 +5,11 @@
   text-align: center;
 }
 
-.header-logo{
+/* .header-logo{
   height:100px;
   width:100px;
   float:right;
-}
+} */
 
 .hr{
   font-weight: bold;
@@ -22,4 +22,7 @@
   margin: 0px;
   font-family:  "Iowan Old Style";
 }
-
+/* 
+.container{
+  background-color: lightblue;
+} */
