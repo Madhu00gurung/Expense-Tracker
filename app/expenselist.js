@@ -56,10 +56,10 @@ const ExpenseList = ({ expenses, deleteExpense, editExpense }) => {
                 <button onClick={handleCancel}>Cancel</button>
               </div>
             ) : (
-              <div>
+              <div className='output-text'>
                 {expense.name} - {expense.category} - ${expense.price.toFixed(2)}
                 <button onClick={() => deleteExpense(expense.id)}>Delete</button>
-                <button onClick={() => handleEdit(expense)}>Edit</button>
+                <button onClick={() => handleEdit(expense)}>update</button>
               </div>
             )}
           </li>
