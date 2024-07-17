@@ -1,4 +1,11 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Project Title and Description
+Title: Expense Tracker App
+Description: Expense Tracker App this app helps users manage their finances by tracking expenses, setting budgets, and generating practical reports.
+
+## Features and functionalities
+Add, edit, and delete expenses,Categorize expenses.(food, transportation, entertainment)
+## Technologies used
+Next.js,css
 
 ## Getting Started
 
