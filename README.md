@@ -2,8 +2,12 @@
 Title: Expense Tracker App
 Description: Expense Tracker App this app helps users manage their finances by tracking expenses, setting budgets, and generating practical reports.
 
+## Installation and setup instructions
+I used Next.js for the expense tracker. I created a project called "Expense Tracker" in Next.js with this command: Command: npx create-next-app Expense Tracker.
+
 ## Features and functionalities
 Add, edit, and delete expenses,Categorize expenses.(food, transportation, entertainment)
+
 ## Technologies used
 Next.js
 ,JavaScript
