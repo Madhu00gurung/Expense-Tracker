@@ -5,9 +5,9 @@ Description: Expense Tracker App this app helps users manage their finances by t
 ## Features and functionalities
 Add, edit, and delete expenses,Categorize expenses.(food, transportation, entertainment)
 ## Technologies used
--Next.js
+Next.js
 ,JavaScript
-,CSS
+,CSS,React.js
 
 ## Getting Started
 
